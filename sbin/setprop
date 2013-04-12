@@ -8,7 +8,7 @@ if [ "$PROP_NAME" == 'ro.kbc.propwritable' ]; then
 else
     PROP_WRITABLE=`getprop persist.kbc.propwritable`
     if [ "$PROP_WRITABLE" = '1' ]; then
-        /system/bin/setpropex $PROP_NAME $PROP_VALUE
+        /sbin/setpropex $PROP_NAME $PROP_VALUE
     else
         /system/bin/setprop $PROP_NAME $PROP_VALUE
     fi

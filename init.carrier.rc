@@ -1,13 +1,19 @@
 on early-init
     export EXTERNAL_STORAGE_DOCOMO /storage/extSdCard
 
+on early-boot
+#    exec /system/bin/sh /sbin/init.prop.sh
+
 on boot
 
 # Create folder for RemoteLock service
     mkdir /data/system 0775 system system
 
 # FeliCa
-    mkdir /efs/FeliCaLock 0770 system felicalock
+    mkdir /efs/FeliCaLock
+    chown system system /efs/FeliCaLock
+    chmod 0777 /efs/FeliCaLock
+
 # JPN: For MobileTV [ISDBT] \android\device\samsung\m3dcm\init.m3dcm.rc
     chown system system /dev/isdbt
     chmod 0660 /dev/isdbt

@@ -1,4 +1,4 @@
-on early-init
+#on early-init
 #    export EXTERNAL_STORAGE_DOCOMO /storage/extSdCard
 
 on early-boot

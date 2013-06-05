@@ -4,6 +4,8 @@ import init.carrier.rc
 
 on init
     setprop ro.kbc.propsupport 1
+    chmod 0755 /kbc/setprop
+    symlink /kbc/setprop /sbin/setprop
 
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage 0550 system sdcard_r

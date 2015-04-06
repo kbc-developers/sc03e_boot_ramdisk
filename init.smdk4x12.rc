@@ -37,6 +37,19 @@ on fs
     mkdir /preload
     mount_all /fstab.smdk4x12
 
+    mount tmpfs tmpfs /system/lib/modules
+    symlink /lib/modules/auth_rpcgss.ko /system/lib/modules/auth_rpcgss.ko
+    symlink /lib/modules/btlock.ko /system/lib/modules/btlock.ko
+    symlink /lib/modules/cifs.ko /system/lib/modules/cifs.ko
+    symlink /lib/modules/commkm.ko /system/lib/modules/commkm.ko
+    symlink /lib/modules/dhd.ko /system/lib/modules/dhd.ko
+    symlink /lib/modules/lockd.ko /system/lib/modules/lockd.ko
+    symlink /lib/modules/mvpkm.ko /system/lib/modules/mvpkm.ko
+    symlink /lib/modules/nfs.ko /system/lib/modules/nfs.ko
+    symlink /lib/modules/pvtcpkm.ko /system/lib/modules/pvtcpkm.ko
+    symlink /lib/modules/scsi_wait_scan.ko /system/lib/modules/scsi_wait_scan.ko
+    symlink /lib/modules/sunrpc.ko /system/lib/modules/sunrpc.ko
+
     setprop ro.crypto.fuse_sdcard true
 
     chown radio system /efs
